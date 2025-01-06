@@ -27,4 +27,9 @@ public class TradeEventController {
     public List<Trade> getAllTrades() {
         return tradeRepository.findAll(); // Fetch all trades from the repository
     }
+
+    @GetMapping("/latest")
+    public List<Trade> getTradeRepository() {
+        return tradeRepository.findTop10ByOrderByIdDesc();
+    }
 }
