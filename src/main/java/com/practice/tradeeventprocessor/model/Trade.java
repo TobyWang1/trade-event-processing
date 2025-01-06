@@ -1,13 +1,16 @@
 package com.practice.tradeeventprocessor.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import lombok.Data;
 
 @Entity
 @Table(name = "trades")
 @Data // This annotation generates getters, setters, toString, equals, and hashCode
+@NoArgsConstructor
 public class Trade {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
