@@ -26,5 +26,10 @@ public class Trade {
     private BigDecimal price;
 
     @Column(name = "trade_time", nullable = false)
-    private final LocalDateTime tradeTime = LocalDateTime.now();
+    private LocalDateTime tradeTime;
+
+    @PrePersist
+    protected void onCreate() {
+        this.tradeTime = LocalDateTime.now();
+    }
 }
