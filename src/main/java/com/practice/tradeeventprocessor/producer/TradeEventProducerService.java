@@ -25,6 +25,7 @@ public class TradeEventProducerService {
                                      TradeRepository tradeRepository) {
         this.kafkaTemplate = kafkaTemplate;
         this.tradeRepository = tradeRepository;
+        this.objectMapper.findAndRegisterModules();
     }
 
     /**
